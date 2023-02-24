@@ -8,32 +8,32 @@
 
 
 # 需要gpu上线通知和离线响应, 需要配置cqhttp的report-self-message为true, 并建议设置local_mode = False, 由服务器端24小时提供响应
-gpu_connect_notify = False  # 上线通知发送给working_groups中配置的群号
-gpu_disconnect_notify = False
+gpu_connect_notify = Ture  # 上线通知发送给working_groups中配置的群号
+gpu_disconnect_notify = Ture
 
 # 设为True时, 仅本地端运行, 单端模式;
 # 设为False, 则需要在服务器启动本程序, 并携带任意参数, 如"python main.py 1",
 # 同时有gpu的电脑执行"python main.py",
 # 服务端负责提供一些消息回复, 保持在线, 客户端则是开机时提供显卡进行AI绘画, 和openai调用
-local_mode = True
+local_mode = False
 
 shared_context = False  # 各群内所有成员共享机器人对话的上下文记录, False为每个用户独立记录对话上下文
 context_length = 6  # 对话上下文记录的长度
 
-use_chatgpt = False  # 是否使用chatgpt, True需要填写下方的邮箱和密码, False使用gpt3, 填写下方的api_key
-api_key = "sk-"  # openai的api key
-email = ""  # openai的邮箱
-password = ""  # openai的密码
+use_chatgpt = Ture  # 是否使用chatgpt, True需要填写下方的邮箱和密码, False使用gpt3, 填写下方的api_key
+api_key = "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"  # openai的api key
+email = "serpentqing@163.com"  # openai的邮箱
+password = "Abeyourself0401"  # openai的密码
 
 ws_url = "ws://127.0.0.1:8080"  # 服务端的cqhttp地址
-gpu_url = "http://127.0.0.1:7860"  # 本地stable diffusion webui服务地址
+gpu_url = "https://127.0.0.1:7860/"  # 本地stable diffusion webui服务地址
 gpu_api_path = "/sdapi/v1/txt2img"  # 本地stable diffusion webui的API路径
 
-working_groups = {123, 456}  # 默认启用机器人的群号, 仍可通过在群内使用 #上线 指令主动添加
-master_id = 123456  # 机器人拥有者qq号
-bot_id = 789  # 机器人自身的qq号
+working_groups = {589365805}  # 默认启用机器人的群号, 仍可通过在群内使用 #上线 指令主动添加
+master_id = 1908963924  # 机器人拥有者qq号
+bot_id = 2939322643  # 机器人自身的qq号
 
-auth_vip_for_all = False  # 所有人都视作vip用户, 能够调用openai
+auth_vip_for_all = True  # 所有人都视作vip用户, 能够调用openai
 max_step = 50  # stable diffusion的最大step
 api_timeout = 40 # openai api调用的超时时间
 
